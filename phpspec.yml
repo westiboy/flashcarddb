@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: flashcarddb
+        psr4_prefix: flashcarddb
+        src_path: app
