@@ -19,8 +19,9 @@ class flashcard extends Controller
         //return 'Flashcard get index';
         return view('flashcard.index');
     }
-    public function postindex()
+    public function postindex(Request $request)
     {
+        dd($request->all());
         return 'flashcard postindex';
     }
 
