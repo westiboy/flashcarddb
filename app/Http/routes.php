@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('flashcard','flashcard@getindex');
+Route::post('flashcard','flashcard@postindex');
