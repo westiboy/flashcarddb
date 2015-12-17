@@ -21,8 +21,25 @@ class flashcard extends Controller
     }
     public function postindex(Request $request)
     {
-        dd($request->all());
-        return 'flashcard postindex';
+        //validate the Flashcard data
+        $this->validate($request, [
+            'card_entry'=>'required',
+            'definition_entry'=>'required',
+            'relation_entry'=>'required',
+            ]);
+
+        //consolidate all of the flashcard data into a single array
+        $data = $request->all();
+        dd($data);
+        //Create a new flashcard
+        /*$flashcard = new flashcard;
+        $flashcard
+            ->setCard_Entry($data['card_entry'])
+            ->setDefinition_Entry($data['definition_entry'])
+            ->setRelation_Entry($data['relation_entry']);
+*/
+        //dd($request->all());
+        //return 'flashcard postindex';
     }
 
 }

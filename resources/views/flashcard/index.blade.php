@@ -24,16 +24,16 @@ such as a page specific stylesheets.
 	    <fieldset id="flashdata">
 	    	<h3>Flashcard Data</h3>
 	    	<label for="card_entry">Word or phrase</label>
-	    	<input type="text" id="card_entry" name="card_entry" placeholder="Input Types">
+	    	<input type="text" id="card_entry" name="card_entry" placeholder="Input Types" value="{{ old('card_entry')}}">
 	    	<br>
 	    	<label for="definition_entry">Personal written definition</label>
-	    	<input type="text" id="definition_entry" name="definition_entry" placeholder="Describes specified type of input in an HTML form">
+	    	<input type="text" id="definition_entry" name="definition_entry" placeholder="Describes specified type of input in an HTML form" value="{{ old('definition_entry')}}">
 	    	<br>
 	    	<label for="relation_entry">Personal relation or use of said term or action</label>
-	    	<input type="text" id="relation_entry" name="relation_entry" placeholder="In a form requiring a phone number, you can define the type as 'tel' to specify it as a telephone number"></textarea>
+	    	<input type="text" id="relation_entry" name="relation_entry" placeholder="In a form requiring a phone number, you can define the type as 'tel' to specify it as a telephone number" value="{{ old('relation_entry')}}">
 	    	<br>
 	    	<label for="card_entry_url">URL of page describing the term and its use definition</label>
-	    	<input type="url" id="card_entry_url" name="card_entry_url" placeholder="http://www.w3schools.com/html/html_form_input_types.asp">
+	    	<input type="url" id="card_entry_url" name="card_entry_url" placeholder="http://www.w3schools.com/html/html_form_input_types.asp" value="{{ old('card_entry_url')}}">
 			<br>
 	    	<div class="ui-field-contain">
 		    	<h4>School and class data (for later reference)</h4>
@@ -72,6 +72,13 @@ such as a page specific stylesheets.
 	    	<input type="number" id="year" name="year" max="9999" min="1900" value="2015">
 	    	<label class="ui-hidden-accessible" for="submit"></label>
 			<br>
+			@if(count($errors) > 0)
+			    <ul>
+			        @foreach ($errors->all() as $error)
+			            <li>{{ $error }}</li>
+			        @endforeach
+			    </ul>
+			@endif
 	    	<button id="submit" name="submit" value="Submit Flashcard" class="ui-btn ui-corner-all">Submit</button>
 	    </fieldset>
 	</form>
