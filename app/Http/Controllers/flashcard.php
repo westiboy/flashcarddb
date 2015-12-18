@@ -16,7 +16,7 @@ class flashcard extends Controller
      */
     public function getindex()
     {
-        //$flashcards = \App\Flashcard::where('user_id','=',\Auth::id())->orderBy('id','DESC')->get();
+        //$flashcards = \flashcarddb\Flashcard::where('user_id','=',\Auth::id())->orderBy('id','DESC')->get();
         //return 'Flashcard get index';
         return view('flashcard.index');
     }

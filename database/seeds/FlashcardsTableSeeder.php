@@ -11,7 +11,7 @@ class FlashcardsTableSeeder extends Seeder
      */
     public function run()
 	{
-		//$user_id = \App\User::where('last_name','=','Smith')->pluck('id');
+		$user_id = \flashcarddb\User::where('last_name','=','Smith')->pluck('id');
 	    DB::table('flashcards')->insert([
 	        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
 	        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -21,7 +21,7 @@ class FlashcardsTableSeeder extends Seeder
 	        'card_entry_url' => 'http://www.w3schools.com/html/html_form_input_types.asp',
 	    ]);
 
-		//$user_id = \App\User::where('last_name','=','Smith')->pluck('id');
+		$user_id = \flashcarddb\User::where('last_name','=','Smith')->pluck('id');
 	    DB::table('flashcards')->insert([
 	        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
 	        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -31,7 +31,7 @@ class FlashcardsTableSeeder extends Seeder
 	        'card_entry_url' => 'http://www.w3schools.com/jquerymobile/jquerymobile_buttons.asp#groupedbuttons',
 	    ]);
 
-		//$user_id = \App\User::where('last_name','=','Smith')->pluck('id');
+		$user_id = \flashcarddb\User::where('last_name','=','Smith')->pluck('id');
 	    DB::table('flashcards')->insert([
 	        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
 	        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
@@ -41,4 +41,11 @@ class FlashcardsTableSeeder extends Seeder
 	        'card_entry_url' => 'http://www.w3schools.com/php/php_datatypes.asp',
 	    ]);
 	}
+
+/*
+	public function user() {
+     	return $this->belongsTo('\App\User'); 
+    } 
+*/
+
 }

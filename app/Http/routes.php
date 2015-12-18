@@ -11,15 +11,22 @@
 |
 */
 
-Route::get('/home', function () {
-    return view('flashcard.index');
+Route::get('/', 'HomeController@getindex');
+
+Route::group(['middleware' => 'auth'], function(){
+    /*
+    Route::get('/flashcards/create','flashcard@getcreate');
+    Route::post('/flashcards/create','flashcard@postcreate');
+
+    Route::get('/flashcards/edit/{id?','flashcard@getedit');
+    Route::post('/flashcards/edit','flashcard@postedit');
+
+    Route::get('/flashcards/confirm-delete/{id?}','flashcard@getconfirmdelete');
+    Route::post('/flashcards/delete/{id?}','flashcard@postdodelete');
+    */
+    Route::get('/flashcards','flashcard@getindex');
+    Route::post('/flashcards','flashcard@postindex');
 });
-
-Route::get('/','flashcard@getindex');
-Route::post('/flashcard','flashcard@postindex');
-
-Route::get('/user','userdata@getindex');
-Route::post('/user','userdata@postindex');
 
 Route::get('/debug', function() {
 
