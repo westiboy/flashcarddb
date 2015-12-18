@@ -15,11 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('flashcard','flashcard@getindex');
-Route::post('flashcard','flashcard@postindex');
+Route::get('/flashcard','flashcard@getindex');
+Route::post('/flashcard','flashcard@postindex');
 
-Route::get('user','userdata@getindex');
-Route::post('user','userdata@postindex');
+Route::get('/user','userdata@getindex');
+Route::post('/user','userdata@postindex');
 
 Route::get('/debug', function() {
 
@@ -60,10 +60,41 @@ if(App::environment('local')) {
 
     Route::get('/drop', function() {
 
-        DB::statement('DROP database flashcards');
-        DB::statement('CREATE database flashcards');
+        DB::statement('DROP database flashcardsdb');
+        DB::statement('CREATE database flashcardsdb');
 
-        return 'Dropped flashcards; created flashcards.';
+        return 'Dropped flashcardsdb; created flashcardsdb.';
     });
 
 };
+
+# Show login form
+Route::get('/login', 'Auth\AuthController@getLogin');
+
+# Process login form
+Route::post('/login', 'Auth\AuthController@postLogin');
+
+# Process logout
+Route::get('/logout', 'Auth\AuthController@getLogout');
+
+# Show registration form
+Route::get('/register', 'Auth\AuthController@getRegister');
+
+# Process registration form
+Route::post('/register', 'Auth\AuthController@postRegister');
+
+Route::get('/confirm-login-worked', function() {
+
+    # You may access the authenticated user via the Auth facade
+    $user = Auth::user();
+
+    if($user) {
+        echo 'You are logged in.';
+        dump($user->toArray());
+    } else {
+        echo 'You are not logged in.';
+    }
+
+    return;
+
+});
