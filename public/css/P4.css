@@ -1,0 +1,30 @@
+#home, #flashcard, #test{
+	padding: 0 1%;
+	width: 98%;
+}
+.ui-bar {
+	min-height: 99px;
+}
+#schimg {
+	max-width: 200px;
+	max-height: 200px;
+	padding: 10px;
+}
+@media all and (max-width: 30em) {
+	.ui-grid-a .ui-block-a,
+	.ui-grid-a .ui-block-b {
+		width: 100%;
+	}
+	.ui-grid-c .ui-block-a,
+	.ui-grid-c .ui-block-b,
+	.ui-grid-c .ui-block-c,
+	.ui-grid-c .ui-block-d {
+		width: 100%;
+	}
+}
+.droppedTRUE {
+	background-color: green;
+}
+.droppedFALSE {
+	background-color: red;
+}
