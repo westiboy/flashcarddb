@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/home', function () {
+    return view('flashcard.index');
 });
 
-Route::get('/flashcard','flashcard@getindex');
+Route::get('/','flashcard@getindex');
 Route::post('/flashcard','flashcard@postindex');
 
 Route::get('/user','userdata@getindex');

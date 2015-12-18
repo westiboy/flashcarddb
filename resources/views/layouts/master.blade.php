@@ -23,6 +23,20 @@
         <h1>HTML5 Flashcard Database</h1>
     </header>
 
+    <nav data-role="navbar">
+        <ul>
+            @if(Auth::check())
+                <li><a href='/' class="ui-btn-active ui-state-persist">Home</a></li>
+                <li><a href='/flashcard/create'>Create a flashcard</a></li>
+                <li><a href='/logout'>Log out</a></li>
+            @else
+                <li><a href='/'>Home</a></li>
+                <li><a href='/login'>Log in</a></li>
+                <li><a href='/register'>Register</a></li>
+            @endif
+        </ul>
+    </nav>
+
     <section>
         {{-- Main page content will be yielded here --}}
         @yield('content')
