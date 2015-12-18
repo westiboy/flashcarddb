@@ -1,4 +1,18 @@
-## Laravel PHP Framework
+#CSCI E-15 P4, Fall 2015#
+
+##Primary page for all projects##
+[http://p1.arangilmorephotography.com/](http://p1.arangilmorephotography.com/ "Primary Projects Page")
+
+##Live link to the P4 project page##
+   [http://p4.arangilmorephotography.com/](http://p4.arangilmorephotography.com/ "P3 Lorem Ipsum Generator")
+
+##Description of the project##
+Essentially this project creates and maintains a database of user generated flashcards, for review and testing.
+
+##Link to screencast demo.##
+As the site is not fully functional, I couldn't really create a screencast demo.
+
+## 2. Laravel PHP Framework##
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
